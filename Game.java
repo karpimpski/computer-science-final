@@ -19,7 +19,7 @@ public class Game
     }
 
     /**
-     * Returns array of strings to model a standard 52-deck of cards
+     * Returns array of strings to model a standard 52-card deck
      */
     public static String[] generateDeck()
     {
@@ -38,7 +38,7 @@ public class Game
                 //determine index of current card
                 index = (i * 4) + j;
 
-                //create and append card
+                //create card and append to deck
                 card = values[i] + suits[j];
                 deck[index] = card;
             }
@@ -49,8 +49,7 @@ public class Game
 
     /**
      * Accepts a deck of cards
-     * Returns a shuffled version
-     * Uses Fisher-Yates shuffle algorithm
+     * Returns a shuffled version using Fisher-Yates shuffle algorithm
      */
     public static String[] shuffle(String[] deck)
     {
