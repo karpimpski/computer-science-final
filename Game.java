@@ -98,19 +98,19 @@ public class Game
      * and leaves specified number of empty Strings at end of the array
      * Returns modified deck
      */
-    public static String[] removeCards(String[] deck, int numberOfCards)
+    public static String[] removeCards(String[] deck, int numberOfCards) throws ArrayIndexOutOfBoundsException
     {
         //generate modified deck
         for(int i = 0; i < deck.length; i++)
         {
-            //"push forward" cards in deck
-            if(i < deck.length - numberOfCards)
+            try
             {
+                //"push forward" cards in deck
                 deck[i] = deck[i + numberOfCards];
             }
-            //empty the last numberOfCards values
-            else
+            catch (ArrayIndexOutOfBoundsException e)
             {
+                //empty the last numberOfCards values
                 deck[i] = "";
             }
         }
